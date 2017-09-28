@@ -1,0 +1,26 @@
+{
+	"configuration": {
+		"status": "info",
+        "name": "JSONConfigLog",
+        "packages": "com.revature",
+        "ThresholdFilter": {
+            "level": "info"
+        },
+		"appenders": {
+			"Console": {
+				"name": "STDOUT",
+				"PatternLayout": {
+					"pattern": "[%p] %d{dd MMM yyyy HH:mm:ss,SSS}{GMT+0} [%l] - %msg%n"
+				}
+			}
+		},
+		"loggers": {			
+			"root": {
+				"level": "info",
+				"AppenderRef": {
+					"ref": "STDOUT"
+				}
+			}
+		}
+	}
+}
