@@ -24,26 +24,26 @@ import io.swagger.annotations.ApiOperation;
  */
 @RestController
 @RequestMapping("api/token/")
-@Api(value="validation", description="Token Verification")
+@Api(value="chech", description="Token Verification")
 public class TokenVerificationController {
 
-  @Autowired
-  private TokenService tokenService;
+	@Autowired
+	private TokenService tokenService;
 
-  public TokenService getTokenService() {
-    return tokenService;
-  }
+	public TokenService getTokenService() {
+		return tokenService;
+	}
 
-  public void setTokenService(TokenService tokenService) {
-    this.tokenService = tokenService;
-  }
+	public void setTokenService(TokenService tokenService) {
+		this.tokenService = tokenService;
+	}
 
-  @GetMapping("verify")
-  @ApiOperation(value = "Verify Token")
-  public ResponseEntity<Response> doVerification(@RequestHeader("authToken") String token) {
-    getTokenService().verifyToken(token);
-    return ResponseEntity.ok(Response.init().success().setData(token).setMsg("Authorized user"));
+	@GetMapping("verify")
+	@ApiOperation(value = "Verify Token")
+	public ResponseEntity<Response> doVerification(@RequestHeader("authToken") String token) {
+		getTokenService().verifyToken(token);
+		return ResponseEntity.ok(Response.init().success().setData(token).setMsg("Authorized user"));
 
-  }
+	}
 
 }

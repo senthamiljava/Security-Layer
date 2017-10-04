@@ -15,21 +15,22 @@ import io.swagger.annotations.ApiOperation;
  * 
  * @author MUTHU G.K
  *
- */
+ * 
+ **/
 @RestController
 @RequestMapping(path = "check/")
-@Api(value="chech", description="Check Server Status")
+@Api(value = "chech", description = "Check Server Status")
 public class CheckServerStatus {
 
-  private static final Logger LOG = LogManager.getLogger(CheckServerStatus.class);
+	private static final Logger LOG = LogManager.getLogger(CheckServerStatus.class);
 
-  @ApiOperation(value = "Get Status")
-  @GetMapping(path = "server-up")
-  public ResponseEntity<String> getServerStatus() {
+	@ApiOperation(value = "Get Status")
+	@GetMapping(path = "server-up")
+	public ResponseEntity<String> getServerStatus() {
 
-    LOG.info("Getting into server status checking method ");
-    return ResponseEntity.ok("The security server is being up only");
+		LOG.info("Getting into server status checking method ");
+		return ResponseEntity.ok("The security server is being up only");
 
-  }
+	}
 
 }
